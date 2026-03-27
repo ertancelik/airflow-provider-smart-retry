@@ -1,0 +1,17 @@
+services:
+  airflow:
+    image: apache/airflow:3.1.8-python3.12
+    environment:
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+      AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_USERS: "admin:admin"
+      AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_ALL_ADMINS: 'true'
+      OLLAMA_BASE_URL: http://host.docker.internal:11434
+      PYTHONPATH: /opt/airflow
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - ./smart_retry:/opt/airflow/smart_retry
+    ports:
+      - "8080:8080"
+    command: standalone

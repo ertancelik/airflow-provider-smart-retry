@@ -1,0 +1,14 @@
+notepad .gitignore
+```
+
+İçine yapıştır:
+```
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+logs/
+*.egg-info/
+dist/
+build/
+.env

@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "airflow-provider-smart-retry"
+version = "0.1.0"
+description = "Airflow provider for LLM-powered intelligent task retry"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.10"
+keywords = ["airflow", "llm", "retry", "operator", "ollama"]
+classifiers = [
+    "Framework :: Apache Airflow",
+    "Framework :: Apache Airflow :: Provider",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+]
+dependencies = [
+    "apache-airflow>=3.0.0",
+    "requests>=2.28.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/airflow-provider-smart-retry"
+Repository = "https://github.com/yourusername/airflow-provider-smart-retry"
