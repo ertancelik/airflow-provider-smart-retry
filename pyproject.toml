@@ -24,3 +24,6 @@ dependencies = [
 [project.urls]
 Homepage = "https://github.com/yourusername/airflow-provider-smart-retry"
 Repository = "https://github.com/yourusername/airflow-provider-smart-retry"
+
+[tool.hatch.build.targets.wheel]
+packages = ["smart_retry"]
