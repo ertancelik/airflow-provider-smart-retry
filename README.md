@@ -41,3 +41,32 @@ Airflow's built-in retry mechanism is static — it waits the same amount of tim
 
 \## How It Works
 
+Task Fails
+↓
+Extract full traceback
+↓
+Send to local Ollama LLM
+↓
+┌─────────────────────────────────────┐
+│         Error Classification        │
+│                                     │
+│  rate_limit → wait 60s, retry 5x   │
+│  network    → wait 15s, retry 4x   │
+│  auth       → fail immediately ✗   │
+│  data_schema→ fail immediately ✗   │
+│  unknown    → wait 30s, retry 3x   │
+└─────────────────────────────────────┘
+↓
+XCom’a classification bilgisi push edilir
+↓
+Airflow UI’dan izlenebilir
+
+
+
+## Privacy & Security
+
+All LLM inference runs **locally via Ollama**.  
+Your error logs never leave your infrastructure. 🔒
+
+Supported models: `llama3.2`, `mistral`, `phi3`, `gemma2`
+
