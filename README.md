@@ -1,7 +1,6 @@
 \# airflow-provider-smart-retry
 
 
-
 An Apache Airflow provider that uses LLMs to make intelligent retry decisions when tasks fail.
 
 [![PyPI version](https://badge.fury.io/py/airflow-provider-smart-retry.svg)](https://pypi.org/project/airflow-provider-smart-retry/)
